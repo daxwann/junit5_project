@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 @TestInstance(TestInstance.Lifecycle.PER_METHOD) // default: creates an instance per method
 class MathUtilsTest {
   MathUtils mathUtils;
+  TestInfo testInfo;
+  TestReporter testReporter;
 
   @BeforeAll
   static void beforeAllInit() {
@@ -15,7 +17,9 @@ class MathUtilsTest {
   }
 
   @BeforeEach
-  void init() {
+  void init(TestInfo testInfo, TestReporter testReporter) {
+    this.testInfo = testInfo;
+    this.testReporter = testReporter;
     mathUtils = new MathUtils();
   }
 
@@ -31,6 +35,7 @@ class MathUtilsTest {
 
   @Nested
   @DisplayName("Test MathUtils#add method")
+  @Tag("Math")
   class testAdd {
     @Test
     @DisplayName("MathUtils#add should add negative numbers")
@@ -38,7 +43,7 @@ class MathUtilsTest {
       int expected = -3;
       int actual = mathUtils.add(-2, -1);
 
-      assertEquals(expected, actual, "The add method should add negative number");
+      assertEquals(expected, actual, () -> "The add method should add negative number");
     }
 
     @Test
@@ -47,21 +52,25 @@ class MathUtilsTest {
       int expected = 4;
       int actual = mathUtils.add(2, 2);
 
-      assertEquals(expected, actual, "The add method should add positive number");
+      assertEquals(expected, actual, () -> "The add method should add positive number");
     }
   }
 
-  @Test
+  @RepeatedTest(3)
   @DisplayName("Test MathUtils#computeCircleRadius method")
-  void testComputeCircleRadius() {
+  @Tag("Circle")
+  void testComputeCircleRadius(RepetitionInfo repetitionInfo) {
     double testRadius = 10;
-
-    assertEquals(Math.PI * testRadius * testRadius, mathUtils.computerCircleArea(testRadius), "Should return area of circle");
+    System.out.println("repetition: " + repetitionInfo.getCurrentRepetition());
+    assertEquals(Math.PI * testRadius * testRadius, mathUtils.computerCircleArea(testRadius), () -> "Should return area of circle");
   }
 
   @Test
   @DisplayName("Test MathUtils#muliplyMethod")
+  @Tag("Math")
   void testMultiply() {
+    System.out.println("Running " + this.testInfo.getDisplayName() + " with tags " + this.testInfo.getTags());
+    testReporter.publishEntry("Running " + this.testInfo.getDisplayName() + " with tags " + this.testInfo.getTags());
     assertAll(
         () -> assertEquals(4, mathUtils.multiply(2, 2)),
         () -> assertEquals(-4, mathUtils.multiply(-2, 2)),
@@ -71,10 +80,11 @@ class MathUtilsTest {
 
   @Test
   @DisplayName("Test MathUtils#divide method")
+  @Tag("Math")
   void testDivide() {
     boolean isServerUp = true;
     assumeTrue(isServerUp);
-    assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "Divide by 0 should throw");
+    assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), () -> "Divide by 0 should throw");
   }
 
   @Test

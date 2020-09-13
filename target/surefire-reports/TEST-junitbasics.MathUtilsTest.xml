@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="junitbasics.MathUtilsTest" time="0.061" tests="6" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="junitbasics.MathUtilsTest" time="0.149" tests="8" errors="0" skipped="1" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/daxwann/Documents/junit_project/target/surefire/surefirebooter12105685426602386666.jar /Users/daxwann/Documents/junit_project/target/surefire 2020-09-12T23-19-12_273-jvmRun1 surefire12318895777593445158tmp surefire_0521653481860160741tmp"/>
+    <property name="sun.java.command" value="/Users/daxwann/Documents/junit_project/target/surefire/surefirebooter4447623907531049222.jar /Users/daxwann/Documents/junit_project/target/surefire 2020-09-12T23-40-19_074-jvmRun1 surefire419234812574935519tmp surefire_02034617611706720312tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/daxwann/Documents/junit_project/target/test-classes:/Users/daxwann/Documents/junit_project/target/classes:/Users/daxwann/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/Users/daxwann/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/daxwann/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:/Users/daxwann/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:/Users/daxwann/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/daxwann/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/daxwann/Documents/junit_project/target/surefire/surefirebooter12105685426602386666.jar"/>
+    <property name="surefire.real.class.path" value="/Users/daxwann/Documents/junit_project/target/surefire/surefirebooter4447623907531049222.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="14.0.2+12-46"/>
@@ -59,9 +59,11 @@
     <system-out><![CDATA[this runs before all
 ]]></system-out>
   </testcase>
-  <testcase name="testDivide" classname="junitbasics.MathUtilsTest" time="0.02"/>
-  <testcase name="testMultiply" classname="junitbasics.MathUtilsTest" time="0.006"/>
-  <testcase name="testComputeCircleRadius" classname="junitbasics.MathUtilsTest" time="0.002"/>
+  <testcase name="testDivide" classname="junitbasics.MathUtilsTest" time="0.027"/>
+  <testcase name="testMultiply" classname="junitbasics.MathUtilsTest" time="0.044"/>
+  <testcase name="testComputeCircleRadius{RepetitionInfo}[1]" classname="junitbasics.MathUtilsTest" time="0.011"/>
+  <testcase name="testComputeCircleRadius{RepetitionInfo}[2]" classname="junitbasics.MathUtilsTest" time="0.004"/>
+  <testcase name="testComputeCircleRadius{RepetitionInfo}[3]" classname="junitbasics.MathUtilsTest" time="0.003"/>
   <testcase name="testAddPositive" classname="junitbasics.MathUtilsTest$testAdd" time="0.002"/>
-  <testcase name="testAddNegative" classname="junitbasics.MathUtilsTest$testAdd" time="0.002"/>
+  <testcase name="testAddNegative" classname="junitbasics.MathUtilsTest$testAdd" time="0.003"/>
 </testsuite>
