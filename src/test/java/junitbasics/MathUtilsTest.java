@@ -29,13 +29,26 @@ class MathUtilsTest {
     System.out.println("this runs after all");
   }
 
-  @Test
+  @Nested
   @DisplayName("Test MathUtils#add method")
-  void testAdd() {
-    int expected = 2;
-    int actual = mathUtils.add(1, 1);
+  class testAdd {
+    @Test
+    @DisplayName("MathUtils#add should add negative numbers")
+    void testAddNegative() {
+      int expected = -3;
+      int actual = mathUtils.add(-2, -1);
 
-    assertEquals(expected, actual, "The add method should add two numbers");
+      assertEquals(expected, actual, "The add method should add negative number");
+    }
+
+    @Test
+    @DisplayName("MathUtils#add should add positive numbers")
+    void testAddPositive() {
+      int expected = 4;
+      int actual = mathUtils.add(2, 2);
+
+      assertEquals(expected, actual, "The add method should add positive number");
+    }
   }
 
   @Test
